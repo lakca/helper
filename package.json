@@ -5,22 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test.js",
-    "cov": "istanbul cover _mocha test.js"
+    "cov": "istanbul cover _mocha test.js",
+    "ci": "npm run cov"
   },
   "files": [
     "index.js"
   ],
-  "node": [
-    6,
-    7,
-    8,
-    9,
-    10
-  ],
+  "engines": {
+     "node": ">= 6.0.0"
+   },
   "author": "lakca <zglpoyz@126.com>",
   "license": "MIT",
   "devDependencies": {
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakca/helper.git"
   }
 }

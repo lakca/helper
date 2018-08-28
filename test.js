@@ -42,7 +42,7 @@ describe('assignWithin', function() {
 
   it('should throw error when target object is null or undefined', function() {
     assert.throws(helper.assignWithin.bind(undefined, null), TypeError);
-    assert.throws(helper.assignWithin.bind(undefined, ), TypeError);
+    assert.throws(helper.assignWithin.bind(undefined), TypeError);
   });
 });
 
@@ -62,7 +62,7 @@ describe('assignWithout', function() {
 
   it('should throw error when target object is null or undefined', function() {
     assert.throws(helper.assignWithout.bind(undefined, null), TypeError);
-    assert.throws(helper.assignWithout.bind(undefined, ), TypeError);
+    assert.throws(helper.assignWithout.bind(undefined), TypeError);
   });
 });
 

@@ -1,6 +1,9 @@
 # helper
 > some helper functions.
 
+[![Build Status](https://www.travis-ci.org/lakca/helper.svg?branch=master)](https://www.travis-ci.org/lakca/helper)
+[![codecov](https://codecov.io/gh/lakca/helper/branch/master/graph/badge.svg)](https://codecov.io/gh/lakca/helper)
+
 ## API
 
 - [assignWithin](#assignwithin)
@@ -107,3 +110,7 @@ const keys = helper.ownKeys({
   keys = ['a', 'b', c];
  */
 ```
+
+## LISENCE
+
+  [MIT](LICENSE)
