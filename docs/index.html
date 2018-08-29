@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#assignWithin">assignWithin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#assignWithout">assignWithout</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#convert">convert</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deempty">deempty</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deundefined">deundefined</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#ownKeys">ownKeys</a></span></li>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1>helper</h1><blockquote>
+<p>some helper functions.</p>
+</blockquote>
+<p><a href="https://www.travis-ci.org/lakca/helper"><img src="https://www.travis-ci.org/lakca/helper.svg?branch=master" alt="Build Status"></a>
+<a href="https://codecov.io/gh/lakca/helper"><img src="https://codecov.io/gh/lakca/helper/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="https://github.com/lakca/helper/issues"><img src="https://img.shields.io/github/issues/lakca/helper.svg" alt="GitHub issues"></a>
+<a href="https://github.com/lakca/helper"><img src="https://img.shields.io/github/stars/lakca/helper.svg" alt="GitHub stars"></a></p>
+<h2>Documentation</h2><ul>
+<li><a href="https://lakca.github.io/helper/docs">Newest</a>, maybe is unstable.</li>
+<li>Look up <a href="https://github.com/lakca/helper/tree/master/docs/@lakca/docs">available docs of different versions</a>, which are stable.</li>
+<li>Preview different versions doc with link <code>https://lakca.github.io/helper/docs/@lakca/helper/${version}</code></li>
+</ul>
+<h2>API</h2><ul>
+<li><a href="#assignwithin">assignWithin</a></li>
+<li><a href="#assignwithout">assignWithout</a></li>
+<li><a href="#convert">convert</a></li>
+<li><a href="#deundefined">deundefined</a></li>
+<li><a href="#deempty">deempty</a></li>
+<li><a href="#ownkeys">ownKeys</a></li>
+<li>...more, read <a href="#documentation">docs</a></li>
+</ul>
+<h3>assignWithin</h3><pre class="prettyprint source lang-javascript"><code>const obj = helper.assignWithin({}, {
+    a: 1,
+    b: 2,
+    c: 3
+  }, [
+    'a', 
+    ['b', 'x'], 
+    ['c', 'c', v => v + 1]
+  ]);
+/*
+  obj = {
+    a: 1,
+    x: 2,
+    c: 4
+  }
+ */</code></pre><h3>assignWithout</h3><pre class="prettyprint source lang-javascript"><code>const obj = helper.assignWithout({}, {
+    a: 1,
+    b: 2,
+    c: 3
+  }, ['c']);
+/*
+  obj = {
+    a: 1,
+    b: 2
+  }
+ */</code></pre><h3>convert</h3><pre class="prettyprint source lang-javascript"><code>const obj = helper.convert({
+    a: 1,
+    b: 2,
+    c: 3
+  }, [
+    ['c', v => v + 1]
+  ]);
+/*
+  obj = {
+    a: 1,
+    b: 2,
+    c: 4
+  }
+ */</code></pre><h3>deundefined</h3><pre class="prettyprint source lang-javascript"><code>const obj = helper.deundefined({
+    a: 1,
+    b: 2,
+    c: undefined
+  });
+/*
+  obj = {
+    a: 1,
+    b: 2
+  }
+ */</code></pre><h3>deempty</h3><pre class="prettyprint source lang-javascript"><code>const obj = helper.deempty({
+    a: 1,
+    b: 2,
+    c: {}
+  });
+/*
+  obj = {
+    a: 1,
+    b: 2
+  }
+ */</code></pre><h3>ownKeys</h3><blockquote>
+<p>same as <code>Reflect.ownKeys</code> in es6 spec.</p>
+</blockquote>
+<pre class="prettyprint source lang-javascript"><code>const c = Symbol('sym');
+const keys = helper.ownKeys({
+    a: 1,
+    b: 2,
+    [c]: 3 
+  });
+/*
+  keys = ['a', 'b', c];
+ */</code></pre><h2>Dependency</h2><p>  None</p>
+<h2>License</h2><p>  <a href="LICENSE">MIT</a></p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Aug 30 2018 12:05:46 GMT+0800 (CST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -6,8 +6,7 @@ const assert = require('assert');
 describe('ownKeys', function() {
   it('should return the same as "Reflect.ownKeys"', function() {
     for (const obj of [
-      {a: 1, b: 2}, // object literal
-      function() {}, // function
+      {a: 1, b: 2} // object literal
     ]) {
       const x = Reflect.ownKeys(obj);
       const y = helper.ownKeys(obj);
@@ -24,14 +23,15 @@ describe('ownKeys', function() {
 describe('assignWithin', function() {
   it('should return as expected', function() {
     const obj = {a: 1, b: 2}
+    const sym = Symbol('sym');
     const _obj = helper.assignWithin(obj, {
       a: 'ax',
       b: 'bj',
-      c: 'nm'
+      [sym]: 'nm'
     }, [
       'b',
       ['a', 'x'],
-      ['c', 'y', v => v.toUpperCase()]
+      [sym, 'y', v => v.toUpperCase()]
     ]);
     assert(_obj === obj);
     assert(obj.a === 1);
@@ -49,15 +49,16 @@ describe('assignWithin', function() {
 describe('assignWithout', function() {
   it('should return as expected', function() {
     const obj = {a: 1, b: 2}
+    const sym = Symbol('sym');
     const _obj = helper.assignWithout(obj, {
       a: 'ax',
       b: 'bj',
-      c: 'nm'
+      [sym]: 'nm',
     }, ['b']);
     assert(_obj === obj);
     assert(obj.a === 'ax');
     assert(obj.b === 2);
-    assert(obj.c === 'nm');
+    assert(obj[sym] === 'nm');
   });
 
   it('should throw error when target object is null or undefined', function() {

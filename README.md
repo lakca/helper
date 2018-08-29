@@ -3,6 +3,13 @@
 
 [![Build Status](https://www.travis-ci.org/lakca/helper.svg?branch=master)](https://www.travis-ci.org/lakca/helper)
 [![codecov](https://codecov.io/gh/lakca/helper/branch/master/graph/badge.svg)](https://codecov.io/gh/lakca/helper)
+[![GitHub issues](https://img.shields.io/github/issues/lakca/helper.svg)](https://github.com/lakca/helper/issues)
+[![GitHub stars](https://img.shields.io/github/stars/lakca/helper.svg)](https://github.com/lakca/helper)
+
+## Documentation
+- [Newest][newDoc], maybe is unstable.
+- Look up [available docs of different versions][docFolder], which are stable.
+- Preview different versions doc with link `https://lakca.github.io/helper/docs/@lakca/helper/${version}`
 
 ## API
 
@@ -11,7 +18,8 @@
 - [convert](#convert)
 - [deundefined](#deundefined)
 - [deempty](#deempty)
-- [ownKeys](#ownKeys)
+- [ownKeys](#ownkeys)
+- ...more, read [docs](#documentation)
 
 ### assignWithin
 ```javascript
@@ -66,7 +74,7 @@ const obj = helper.convert({
  */
 ```
 
-### dedeundefined
+### deundefined
 ```javascript
 const obj = helper.deundefined({
     a: 1,
@@ -111,6 +119,12 @@ const keys = helper.ownKeys({
  */
 ```
 
-## LISENCE
+## Dependency
+  None
+
+## License
 
   [MIT](LICENSE)
+
+[newDoc]:https://lakca.github.io/helper/docs
+[docFolder]:https://github.com/lakca/helper/tree/master/docs/@lakca/docs

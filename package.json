@@ -1,23 +1,26 @@
 {
-  "name": "helper",
-  "version": "1.0.0",
-  "description": "js helper function.",
+  "name": "@lakca/helper",
+  "description": "js helper functions.",
   "main": "index.js",
   "scripts": {
     "test": "mocha test.js",
     "cov": "istanbul cover _mocha test.js",
-    "ci": "npm run cov"
+    "ci": "npm run cov",
+    "doc": "jsdoc -c .jsdoc.json",
+    "version-doc": "jsdoc -c .jsdoc.json -P package.json"
   },
   "files": [
     "index.js"
   ],
   "engines": {
-     "node": ">= 6.0.0"
-   },
+    "node": ">= 6.0.0"
+  },
   "author": "lakca <zglpoyz@126.com>",
   "license": "MIT",
   "devDependencies": {
     "istanbul": "^0.4.5",
+    "jsdoc": "^3.5.5",
+    "minami": "^1.2.3",
     "mocha": "^5.2.0"
   },
   "repository": {
