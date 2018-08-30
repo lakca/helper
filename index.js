@@ -7,6 +7,7 @@ function isJSON(obj) {
 }
 
 /**
+ * @since 0.0.1
  * @description  get own(enumerable and non-enumerable) keys of an object, the same as `Reflect.ownKeys` in es6 spec.
  *
  * @param  {Object} obj
@@ -17,6 +18,7 @@ function ownKeys(obj) {
 };
 
 /**
+ * @since 0.0.1
  * Assign specific enumerable own properties of source object to target object.
  * perform the same as `Object.assign(a, b)`.
  *
@@ -66,6 +68,7 @@ function assignWithin(tarObj, srcObj, range) {
 };
 
 /**
+ * @since 0.0.1
  * Assign all excluded specific ones enumerable own properties from source to target object.
  * perform the same as `Object.assign(a, b)`.
  *
@@ -97,6 +100,7 @@ function assignWithout(tarObj, srcObj, range) {
 };
 
 /**
+ * @since 0.0.1
  * convert attributes of object literal(or own keys of an object).
  *
  * @param  {Object} obj - target object.
@@ -135,6 +139,7 @@ function convert(obj, items) {
 };
 
 /**
+ * @since 0.0.1
  * Delete attribute(s) whose value is undefined from object literal(or own keys of an object).
  *
  * @param  {Object} obj - target object.
@@ -159,6 +164,7 @@ function deundefined(obj) {
 };
 
 /**
+ * @since 0.0.1
  * delete attribute(s) of which value is an empty object literal(or own keys of an object).
  *
  * @param  {Object} obj

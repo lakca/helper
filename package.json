@@ -1,5 +1,5 @@
 {
-  "name": "@lakca/helper",
+  "name": "lakca-helper",
   "description": "js helper functions.",
   "main": "index.js",
   "scripts": {
@@ -26,5 +26,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lakca/helper.git"
-  }
+  },
+  "version": "0.0.1"
 }
