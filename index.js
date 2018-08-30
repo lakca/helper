@@ -8,7 +8,8 @@ function isJSON(obj) {
 
 /**
  * @since 0.0.1
- * @description  get own(enumerable and non-enumerable) keys of an object, the same as `Reflect.ownKeys` in es6 spec.
+ *
+ * @description get own(enumerable and non-enumerable) keys of an object, the same as `Reflect.ownKeys` in es6 spec.
  *
  * @param  {Object} obj
  * @return {Array}
@@ -19,7 +20,8 @@ function ownKeys(obj) {
 
 /**
  * @since 0.0.1
- * Assign specific enumerable own properties of source object to target object.
+ *
+ * @description Assign specific enumerable own properties of source object to target object.
  * perform the same as `Object.assign(a, b)`.
  *
  * @param  {Object} tarObj - target object.
@@ -69,7 +71,8 @@ function assignWithin(tarObj, srcObj, range) {
 
 /**
  * @since 0.0.1
- * Assign all excluded specific ones enumerable own properties from source to target object.
+ *
+ * @description Assign all excluded specific ones enumerable own properties from source to target object.
  * perform the same as `Object.assign(a, b)`.
  *
  * @param  {Object} tarObj - target object.
@@ -101,7 +104,8 @@ function assignWithout(tarObj, srcObj, range) {
 
 /**
  * @since 0.0.1
- * convert attributes of object literal(or own keys of an object).
+ *
+ * @description convert attributes of object literal(or own keys of an object).
  *
  * @param  {Object} obj - target object.
  * @param  {Array[]} items - conversion list.
@@ -140,7 +144,9 @@ function convert(obj, items) {
 
 /**
  * @since 0.0.1
- * Delete attribute(s) whose value is undefined from object literal(or own keys of an object).
+ *
+ * @description Delete attribute(s) whose value is undefined from object literal(or own keys of an object).
+ * traversing by {@link ownKeys}.
  *
  * @param  {Object} obj - target object.
  * @return {Object} obj - deundefined obj.
@@ -165,7 +171,8 @@ function deundefined(obj) {
 
 /**
  * @since 0.0.1
- * delete attribute(s) of which value is an empty object literal(or own keys of an object).
+ * @description delete attribute(s) of which value is an empty object literal(or own keys of an object).
+ * traversing by {@link ownKeys}.
  *
  * @param  {Object} obj
  * @return {Object} obj  deemptied obj.
@@ -184,7 +191,7 @@ function deundefined(obj) {
  */
 function deempty(obj) {
   for (const key of ownKeys(obj)) {
-    if (isJSON(obj[key]) && !Object.keys(obj[key]).length) {
+    if (isJSON(obj[key]) && !ownKeys(obj[key]).length) {
       delete obj[key];
     }
   }
@@ -197,5 +204,5 @@ module.exports = {
   assignWithout,
   convert,
   deundefined,
-  deempty,
+  deempty
 };
