@@ -95,3 +95,25 @@ describe('deempty', function() {
     assert.ifError('a' in obj);
   });
 });
+
+describe('dedup', function() {
+  it('return new array', function() {
+    const arr = [1, 2, 2, 3, 2, 1, 2, 2, 3];
+    const newArr = helper.dedup(arr);
+    assert.deepStrictEqual(newArr, [1, 2, 3]);
+  });
+  it('deduplicate original array', function() {
+    const arr = [1, 2, 2, 3, 2, 1, 2, 2, 3];
+    const r = helper.dedup(arr, true);
+    assert(r === undefined, 'expect return undefined');
+    assert.deepStrictEqual(arr, [1, 2, 3]);
+  });
+  it('deduplicate original array which length is less than 2', function() {
+    for (const arr of [[1], []]) {
+      const _ = JSON.parse(JSON.stringify(arr));
+      const r = helper.dedup(arr, true);
+      assert(r === undefined, 'expect return undefined');
+      assert.deepStrictEqual(arr, _);
+    }
+  });
+});

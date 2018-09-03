@@ -198,11 +198,62 @@ function deempty(obj) {
   return obj;
 };
 
+/**
+ * @desc deduplicate array.
+ *
+ * @param  {Array}  arr
+ * @param  {Boolean} [isDedupOrigin=false]
+ * - if true, deduplicate the original array.
+ * - if false, return a new array with deduplicated values.
+ * @return {Array|undefined}
+ * - if isDedupOrigin is false, return a new array.
+ * - if isDedupOrigin is true, return undefined.
+ *
+ * @example
+ * const arr = [1, 2, 2, 3, 2, 1, 2, 2, 3];
+ * const newArr = helper.dedup(arr);
+ * assert.deepStrictEqual(newArr, [1, 2, 3]);
+ *
+ */
+function dedup(arr, isDedupOrigin) {
+  if (!isDedupOrigin) {
+    return Array.from(new Set(arr));
+  } else {
+    if (arr.length < 2) {
+      return;
+    }
+    let m = 0;
+    let d = 0;
+    do {
+      if (m in arr) {
+        const v = arr[m];
+        let n = arr.length - 1;
+        while (n > m) {
+          if (n in arr && arr[n] === v) {
+            delete arr[n];
+            d++;
+          }
+          n--;
+        }
+      }
+    } while (++m < arr.length)
+
+    for (let i = 0; i <= arr.length - 1; i++) {
+      if (!(i in arr)) {
+        arr[i] = arr[i + 1];
+        delete arr[i + 1];
+      }
+    };
+    arr.length = arr.length - d;
+  }
+}
+
 module.exports = {
   ownKeys,
   assignWithin,
   assignWithout,
   convert,
   deundefined,
-  deempty
+  deempty,
+  dedup
 };
