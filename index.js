@@ -210,10 +210,17 @@ function deempty(obj) {
  * - if isDedupOrigin is true, return undefined.
  *
  * @example
+ * // return a new deduplicate array.
  * const arr = [1, 2, 2, 3, 2, 1, 2, 2, 3];
- * const newArr = helper.dedup(arr);
+ * const newArr = dedup(arr);
  * assert.deepStrictEqual(newArr, [1, 2, 3]);
+ * assert(arr !== newArr);
  *
+ * @example
+ * // dedup array itself.
+ * const arr = [1, 2, 2, 3, 2, 1, 2, 2, 3];
+ * dedup(arr, true);
+ * assert.deepStrictEqual(arr, [1, 2, 3]);
  */
 function dedup(arr, isDedupOrigin) {
   if (!isDedupOrigin) {
@@ -248,6 +255,143 @@ function dedup(arr, isDedupOrigin) {
   }
 }
 
+/**
+ * @description  Set key alias.
+ *
+ * @param  {Object} obj - source object.
+ * @param  {Object} props - key and alias pairs.
+ * @param  {Object} [options] - options.
+ * @param  {Boolean} [options.getter=false] - link keys through 'getter'..
+ * @return {Object} - return input object.
+ *
+ * @example
+ * const obj = alias({a: {}, b: {}}, {a: 'alpha', 'b': ['beta', 'Beta']});
+ * assert(obj.a === obj.alpha);
+ * assert(obj.b === obj.beta);
+ * assert(obj.b === obj.Beta);
+ */
+function alias(obj, props, options) {
+
+  const set = (options && options.getter)
+    ? function (tarKey, srcKey) {
+        obj.__defineGetter__(tarKey, () => obj[srcKey]);
+      }
+    : function (tarKey, srcKey) {
+        obj[tarKey] = obj[srcKey];
+      };
+  Object.keys(props).forEach(srcKey => {
+    const tarKey = props[srcKey];
+    if (Array.isArray(tarKey)) {
+      for (const k of tarKey) set(k, srcKey);
+    } else {
+      set(tarKey, srcKey);
+    }
+  });
+  return obj;
+}
+
+const REG_DATE_FORMAT = /(%+)(y|mm|m|dd|d|D|HH|H|MM|M|SS|S|TT|T)/g;
+
+/**
+ * @desc Read a date with human friendly keys, also format s string with keys replacement.
+ *
+ * @param  {Object|Number} date - an acceptable value of Date.prototype.constructor.
+ * @param  {String} [pattern] - a string, of which parts will be replaced through available key-values. see details in below examples.
+ * @return {Object|String} - if pattern is available, return formatted string,
+ * else return an object with keys and format method.
+ *
+ * @example
+ * readDate(new Date(2018, 0, 1, 1, 1, 1, 1), '%y-%m-%d %H:%M:%S.%T'); // 2018-1-1 1:1:1.1
+ * // zero padding in front.
+ * readDate(new Date(2018, 0, 1, 1, 1, 1, 1), '%y-%mm-%dd %HH:%MM:%SS.%TT'); // 2018-01-01 01:01:01.001
+ *
+ * @example
+ * const d = readDate(new Date(2018, 0, 1, 1, 1, 1, 1);
+ * console.log(d.format('%y-%m-%d %H:%M:%S.%T')); // 2018-1-1 1:1:1.1
+ * console.log(d.year); // 2018
+ * console.log(d.y); // 2018
+ * // alias:
+ * //  y: year
+ * //  m: month
+ * //  d: date
+ * //  D: day
+ * //  H: hour
+ * //  M: minute
+ * //  S: second
+ * //  T: millisecond
+ */
+function readDate(date, pattern) {
+  /* support timestamp */
+  date = new Date(date);
+  const data = {
+    y: date.getFullYear(),
+    m: date.getMonth() + 1,
+    d: date.getDate(),
+    D: date.getDay(),
+    H: date.getHours(),
+    M: date.getMinutes(),
+    S: date.getSeconds(),
+    T: date.getMilliseconds(),
+    get mm() {
+      return padding(this.m, 2);
+    },
+    get dd() {
+      return padding(this.d, 2);
+    },
+    get HH() {
+      return padding(this.H, 2);
+    },
+    get MM() {
+      return padding(this.M, 2);
+    },
+    get SS() {
+      return padding(this.S, 2);
+    },
+    get TT() {
+      return padding(this.T, 3);
+    },
+    format(pat) {
+      return pat.replace(REG_DATE_FORMAT, (str, delimiter, key) => {
+        const rep = (delimiter.length % 2) ? this[key] : key;
+        return '%'.repeat(delimiter.length / 2) + rep;
+      });
+    }
+  };
+  if (pattern) {
+    return data.format(pattern);
+  } else {
+    /* given alias */
+    alias(data, {
+      y: 'year',
+      m: 'month',
+      d: 'date',
+      D: 'day',
+      H: 'hour',
+      M: 'minute',
+      S: 'second',
+      T: 'millisecond'
+    }, { getter: true });
+    return data;
+  }
+}
+
+/**
+ * @desc Padding integer on the left.
+ *
+ * @param  {Number} src - source number to padding on, number string is okay.
+ * @param  {Number} length - total length of output string.
+ * @param  {String} {char=0} - padding character, a string with more than one character is treated as a whole.
+ * @return {String}
+ *
+ * @example
+ * console.log(padding(1, 2)); // 01
+ * console.log(padding(1, 2, '~')); // ~1
+ */
+function padding(src, length, char) {
+  char = char || '0'; // char is expected to be one character.
+  return char.repeat(Math.max(0, length - src.toString().length)) + src;
+}
+
 module.exports = {
   ownKeys,
   assignWithin,
@@ -255,5 +399,8 @@ module.exports = {
   convert,
   deundefined,
   deempty,
-  dedup
+  dedup,
+  alias,
+  readDate,
+  padding
 };

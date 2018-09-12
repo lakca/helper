@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#assignWithin">assignWithin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#assignWithout">assignWithout</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#convert">convert</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deempty">deempty</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deundefined">deundefined</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#ownKeys">ownKeys</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#alias">alias</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#assignWithin">assignWithin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#assignWithout">assignWithout</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#convert">convert</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#dedup">dedup</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deempty">deempty</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deundefined">deundefined</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#ownKeys">ownKeys</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#padding">padding</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#readDate">readDate</a></span></li>
 </nav>
 
 <div id="main">
@@ -117,11 +117,15 @@
 
     
 
-    <h4 class="name" id="assignWithin"><span class="type-signature"></span>assignWithin<span class="signature">(tarObj, srcObj, range)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="alias"><span class="type-signature"></span>alias<span class="signature">(obj, props, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
 
 
+
+<div class="description">
+    <p>Set key alias.</p>
+</div>
 
 
 
@@ -131,11 +135,6 @@
 
     
 
-    
-    <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.0.1
-Assign specific enumerable own properties of source object to target object.
-perform the same as `Object.assign(a, b)`.</li></ul></dd>
     
 
     
@@ -161,7 +160,334 @@ perform the same as `Object.assign(a, b)`.</li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line54">line 54</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line273">line 273</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>source object.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>props</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>key and alias pairs.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>options.</p>
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>getter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Boolean</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">
+                <p>link keys through 'getter'..</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Object</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>return input object.</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+<div class="section-examples">
+<h5>Example</h5>
+
+    <pre class="prettyprint"><code>const obj = alias({a: {}, b: {}}, {a: 'alpha', 'b': ['beta', 'Beta']});
+assert(obj.a === obj.alpha);
+assert(obj.b === obj.beta);
+assert(obj.b === obj.Beta);</code></pre>
+
+</div>
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="assignWithin"><span class="type-signature"></span>assignWithin<span class="signature">(tarObj, srcObj, range)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Assign specific enumerable own properties of source object to target object.
+perform the same as <code>Object.assign(a, b)</code>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>0.0.1</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line56">line 56</a>
     </li></ul></dd>
     
 
@@ -496,6 +822,11 @@ assert(!('b' in obj));</code></pre>
 
 
 
+<div class="description">
+    <p>Assign all excluded specific ones enumerable own properties from source to target object.
+perform the same as <code>Object.assign(a, b)</code>.</p>
+</div>
+
 
 
 
@@ -506,9 +837,7 @@ assert(!('b' in obj));</code></pre>
 
     
     <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.0.1
-Assign all excluded specific ones enumerable own properties from source to target object.
-perform the same as `Object.assign(a, b)`.</li></ul></dd>
+    <dd class="tag-since"><ul class="dummy"><li>0.0.1</li></ul></dd>
     
 
     
@@ -534,7 +863,7 @@ perform the same as `Object.assign(a, b)`.</li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line88">line 88</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -721,6 +1050,10 @@ assert(!('a' in obj));</code></pre>
 
 
 
+<div class="description">
+    <p>convert attributes of object literal(or own keys of an object).</p>
+</div>
+
 
 
 
@@ -731,8 +1064,7 @@ assert(!('a' in obj));</code></pre>
 
     
     <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.0.1
-convert attributes of object literal(or own keys of an object).</li></ul></dd>
+    <dd class="tag-since"><ul class="dummy"><li>0.0.1</li></ul></dd>
     
 
     
@@ -758,7 +1090,7 @@ convert attributes of object literal(or own keys of an object).</li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line125">line 125</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line129">line 129</a>
     </li></ul></dd>
     
 
@@ -995,11 +1327,15 @@ assert(obj.b === -2);</code></pre>
 
     
 
-    <h4 class="name" id="deempty"><span class="type-signature"></span>deempty<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="dedup"><span class="type-signature"></span>dedup<span class="signature">(arr, isDedupOrigin<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array|undefined}</span></h4>
 
     
 
 
+
+<div class="description">
+    <p>deduplicate array.</p>
+</div>
 
 
 
@@ -1009,10 +1345,6 @@ assert(obj.b === -2);</code></pre>
 
     
 
-    
-    <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.0.1
-delete attribute(s) of which value is an empty object literal(or own keys of an object).</li></ul></dd>
     
 
     
@@ -1038,7 +1370,254 @@ delete attribute(s) of which value is an empty object literal(or own keys of an 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line185">line 185</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line225">line 225</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isDedupOrigin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Boolean</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">
+                <ul>
+<li>if true, deduplicate the original array.</li>
+<li>if false, return a new array with deduplicated values.</li>
+</ul>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Array</code></span>
+|
+
+<span class="param-type"><code>undefined</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>if isDedupOrigin is false, return a new array.</li>
+<li>if isDedupOrigin is true, return undefined.</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+<div class="section-examples">
+<h5>Examples</h5>
+
+    <pre class="prettyprint"><code>// return a new deduplicate array.
+const arr = [1, 2, 2, 3, 2, 1, 2, 2, 3];
+const newArr = dedup(arr);
+assert.deepStrictEqual(newArr, [1, 2, 3]);
+assert(arr !== newArr);</code></pre>
+
+    <pre class="prettyprint"><code>// dedup array itself.
+const arr = [1, 2, 2, 3, 2, 1, 2, 2, 3];
+dedup(arr, true);
+assert.deepStrictEqual(arr, [1, 2, 3]);</code></pre>
+
+</div>
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="deempty"><span class="type-signature"></span>deempty<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>delete attribute(s) of which value is an empty object literal(or own keys of an object).
+traversing by <a href="global.html#ownKeys"><code>ownKeys</code></a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>0.0.1</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line192">line 192</a>
     </li></ul></dd>
     
 
@@ -1177,6 +1756,11 @@ assert(!('a' in obj));</code></pre>
 
 
 
+<div class="description">
+    <p>Delete attribute(s) whose value is undefined from object literal(or own keys of an object).
+traversing by <a href="global.html#ownKeys"><code>ownKeys</code></a>.</p>
+</div>
+
 
 
 
@@ -1187,8 +1771,7 @@ assert(!('a' in obj));</code></pre>
 
     
     <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.0.1
-Delete attribute(s) whose value is undefined from object literal(or own keys of an object).</li></ul></dd>
+    <dd class="tag-since"><ul class="dummy"><li>0.0.1</li></ul></dd>
     
 
     
@@ -1214,7 +1797,7 @@ Delete attribute(s) whose value is undefined from object literal(or own keys of 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line157">line 157</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line163">line 163</a>
     </li></ul></dd>
     
 
@@ -1390,7 +1973,7 @@ assert(!('a' in obj));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line16">line 16</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -1498,6 +2081,476 @@ assert(!('a' in obj));</code></pre>
 
 </div>
         
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="padding"><span class="type-signature"></span>padding<span class="signature">(src, length, {char)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Padding integer on the left.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line390">line 390</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>src</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Number</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+                <p>source number to padding on, number string is okay.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>length</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Number</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+                <p>total length of output string.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>{char</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    0}
+                
+                </td>
+            
+
+            <td class="description last">
+                <p>padding character, a string with more than one character is treated as a whole.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+    
+</div>
+
+
+
+<div class="section-examples">
+<h5>Example</h5>
+
+    <pre class="prettyprint"><code>console.log(padding(1, 2)); // 01
+console.log(padding(1, 2, '~')); // ~1</code></pre>
+
+</div>
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="readDate"><span class="type-signature"></span>readDate<span class="signature">(date, pattern<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object|String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Read a date with human friendly keys, also format s string with keys replacement.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line323">line 323</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+|
+
+<span class="param-type"><code>Number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>an acceptable value of Date.prototype.constructor.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pattern</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>a string, of which parts will be replaced through available key-values. see details in below examples.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Object</code></span>
+|
+
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>if pattern is available, return formatted string,
+else return an object with keys and format method.</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+<div class="section-examples">
+<h5>Examples</h5>
+
+    <pre class="prettyprint"><code>readDate(new Date(2018, 0, 1, 1, 1, 1, 1), '%y-%m-%d %H:%M:%S.%T'); // 2018-1-1 1:1:1.1
+// zero padding in front.
+readDate(new Date(2018, 0, 1, 1, 1, 1, 1), '%y-%mm-%dd %HH:%MM:%SS.%TT'); // 2018-01-01 01:01:01.001</code></pre>
+
+    <pre class="prettyprint"><code>const d = readDate(new Date(2018, 0, 1, 1, 1, 1, 1);
+console.log(d.format('%y-%m-%d %H:%M:%S.%T')); // 2018-1-1 1:1:1.1
+console.log(d.year); // 2018
+console.log(d.y); // 2018
+// alias:
+//  y: year
+//  m: month
+//  d: date
+//  D: day
+//  H: hour
+//  M: minute
+//  S: second
+//  T: millisecond</code></pre>
+
+</div>
+
+</div>
+        
     
 
     
@@ -1515,7 +2568,7 @@ assert(!('a' in obj));</code></pre>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Aug 30 2018 12:37:17 GMT+0800 (CST) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Oct 09 2018 16:57:31 GMT+0800 (CST) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
